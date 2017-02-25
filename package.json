@@ -1,0 +1,11 @@
+{
+  "name":"app2",
+  "version":"0.0.2",
+  "dependencies":{
+            "express":"^4.9.0",
+            "fs":"^0.0.2",
+            "body-parser":"^1.8.1",
+            "http":"latest",
+            "querystring":"latest"
+          }
+}

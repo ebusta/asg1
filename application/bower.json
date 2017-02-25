@@ -1,0 +1,9 @@
+{
+  "name":"app2",
+  "version":"0.0.2",
+  "directory":"public/bower_components",
+  "dependencies":{
+            "jquery":"",
+            "polymer":""
+            }
+}

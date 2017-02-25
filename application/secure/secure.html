@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+      $('#addUser').click(function(e){
+        $("#options").html("<div id='addUserDetails'><input type='text' id='addUserName' placeholder='Username' name='uname' required> <input type='password' id='addUserPword' placeholder='Password' name='pword' required> <button id='addUserSubmit' type='submit'>Add Dat User Boi</button></div>");
+        $("#addUserSubmit").click(function(e){
+          var un = $("#addUserName").val();
+          var pw = $("#addUserPword").val();
+          //console.log(un + pw);
+          $.post("http://localhost:3002/addUser",{"un":un,"pw":pw}, function(data){
+            //encode passwords before sending ya batch
+          });
+        });
+      });
+
+      $('#remUser').click(function(e){
+        e.preventDefault();
+        $("#options").html("<div id='remUserDetails'><input type='text' id='remUserName' placeholder='Username' name='uname' required> <input type='password' id='remUserPword' placeholder='Password' name='pword' required> <button id='remUserSubmit' type='submit'>Remove Dat User Gurl</button></div>");
+      });
+    });
+  </script>
+
+  <body>
+    <div id='main'>
+      WHAT IT IS SUCKAS<br><br>
+      <button id="addApp" type="submit">Add Application</button>
+      <button id="remApp" type="submit">Remove Application</button>
+      <button id="addUser" type="submit">Add User</button>
+      <button id="remUser" type="submit">Remove User</button>
+      <button id="modUser" type="submit">Modify User</button>
+    </div>
+    <div id='options'></div>
+    <br><br>
+  </body>
+
+</html>
